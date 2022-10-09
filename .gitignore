@@ -6,3 +6,5 @@
 .gradle/7.5/gc.properties
 .gradle/vcs-1/gc.properties
 .gradle/buildOutputCleanup/cache.properties
+.gradle/file-system.probe
+/build/
