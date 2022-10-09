@@ -1,12 +1,11 @@
 package spring.commento.springbasic.chapter01;
 
-import java.util.HashMap;
 import java.util.Map;
 
 // 간단한 실습을 위한 클래스
 public class TempClass {
 
-    private static TempClass INSTANCE = new TempClass();
+    private static final TempClass INSTANCE = new TempClass();
 
     private TempClass(){}
 
