@@ -1,4 +1,4 @@
-package spring.commento.springbasic.chapter01;
+package spring.commento.springbasic.global;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

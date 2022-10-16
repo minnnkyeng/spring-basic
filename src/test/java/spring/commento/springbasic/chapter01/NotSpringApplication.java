@@ -2,6 +2,7 @@ package spring.commento.springbasic.chapter01;
 
 import spring.commento.springbasic.chapter01.repository.CompanyMemberRepository;
 import spring.commento.springbasic.chapter01.service.CompanyMemberService;
+import spring.commento.springbasic.global.Member;
 
 public class NotSpringApplication {
     public static void main(String[] args) {

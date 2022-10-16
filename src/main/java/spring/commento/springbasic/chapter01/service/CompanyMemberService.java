@@ -1,7 +1,7 @@
 package spring.commento.springbasic.chapter01.service;
 
 import lombok.RequiredArgsConstructor;
-import spring.commento.springbasic.chapter01.Member;
+import spring.commento.springbasic.global.Member;
 import spring.commento.springbasic.chapter01.repository.MemberRepository;
 
 @RequiredArgsConstructor

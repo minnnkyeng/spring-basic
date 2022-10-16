@@ -1,8 +1,7 @@
 package spring.commento.springbasic.chapter01.repository;
 
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.stereotype.Repository;
-import spring.commento.springbasic.chapter01.Member;
+import spring.commento.springbasic.global.Member;
 import spring.commento.springbasic.chapter01.TempClass;
 
 @Slf4j

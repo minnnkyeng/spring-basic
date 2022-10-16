@@ -6,9 +6,9 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.test.context.SpringBootTest;
-import spring.commento.springbasic.chapter01.repository.CompanyMemberRepository;
 import spring.commento.springbasic.chapter01.repository.MemberRepository;
 import spring.commento.springbasic.chapter01.service.CompanyMemberService;
+import spring.commento.springbasic.global.Member;
 
 @SpringBootTest
 @Slf4j
