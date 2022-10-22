@@ -15,6 +15,6 @@ public class LifeCycleExampleV1 implements InitializingBean, DisposableBean {
 
     @Override
     public void afterPropertiesSet() throws Exception {
-        log.info("\n LifeCycleExampleV1 초기화 콜백");
+//        log.info("\n LifeCycleExampleV1 초기화 콜백");
     }
 }

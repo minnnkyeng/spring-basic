@@ -20,27 +20,27 @@ public class LifeCycleConfig {
 
     @PostConstruct
     public void init(){
-        log.info("\n postconstruct 호출");
+//        log.info("\n postconstruct 호출");
     }
 
     @PreDestroy
     public void destory(){
-        log.info("\n predestroy 호출");
+//        log.info("\n predestroy 호출");
    }
 
     @EventListener(ApplicationReadyEvent.class)
     public void eventListner(){
-        log.info("\n event ");
+//        log.info("\n event ");
    }
 }
 
 @Slf4j
 class LifeCycleExampleV2{
     public void initMethod(){
-        log.info("\n 초기화 표시 메서드");
+//        log.info("\n 초기화 표시 메서드");
     }
 
     public void destroyMethod(){
-        log.info("\n 소멸전 표시 메서드");
+//        log.info("\n 소멸전 표시 메서드");
     }
 }
