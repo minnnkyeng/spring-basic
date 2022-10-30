@@ -1,6 +1,7 @@
 package spring.commento.springbasic.chapter03;
 
 import lombok.extern.slf4j.Slf4j;
+import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -46,6 +47,22 @@ public class Chapter03Test_1 {
         em.persist(company);
         em.flush();
         em.clear();
+    }
+
+    @AfterEach
+    void fin(){
+        List<User> members = em.createQuery("select m from User m",User.class)
+                               .getResultList();
+
+        List<Company> companies = em.createQuery("select c from Company c",Company.class)
+                                    .getResultList();
+
+        members.forEach(member -> em.detach(member));
+        em.clear();
+        em.flush();
+        companies.forEach(company -> em.detach(company));
+        em.clear();
+        em.flush();
     }
 
     @Test
