@@ -45,7 +45,7 @@ public class UserRepository {
         company.getUsers().add(member);
 
         //연관관계의 주인에 값 설정
-        member.setCompany(company);
+        member.changeCompany(company);
 
         em.persist(company);
 

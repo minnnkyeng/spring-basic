@@ -18,7 +18,7 @@ import java.util.List;
 
 @Slf4j
 @SpringBootTest
-@Rollback(value = false)
+//@Rollback(value = false)
 @Transactional
 public class Chapter03Test_1 {
     @PersistenceContext
@@ -27,43 +27,6 @@ public class Chapter03Test_1 {
     @Autowired
     UserRepository userRepository;
 
-    @BeforeEach
-    void initData(){
-        User member1 = new User();
-        member1.setName("saechim");
-        member1.setAge(28);
-
-        User member = new User();
-        member.setName("ChimChakMan");
-        member.setAge(40);
-
-        Company company = new Company();
-        company.setCompanyName("samsung");
-        company.setUsers(List.of(member, member1));
-
-        member.setCompany(company);
-        member1.setCompany(company);
-
-        em.persist(company);
-        em.flush();
-        em.clear();
-    }
-
-    @AfterEach
-    void fin(){
-        List<User> members = em.createQuery("select m from User m",User.class)
-                               .getResultList();
-
-        List<Company> companies = em.createQuery("select c from Company c",Company.class)
-                                    .getResultList();
-
-        members.forEach(member -> em.detach(member));
-        em.clear();
-        em.flush();
-        companies.forEach(company -> em.detach(company));
-        em.clear();
-        em.flush();
-    }
 
     @Test
     void mistake(){
