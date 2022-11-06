@@ -14,10 +14,8 @@ public class FactoryMethodMain {
     static void factory() {
         if (System.getProperty("os.name").contains("Mac")) {
             dialog = new MacDialog();
-            log.info("\n window dialog");
         } else {
             dialog = new WindowDialog();
-            log.info("\n html dialog");
         }
     }
     static void businessLogic() {

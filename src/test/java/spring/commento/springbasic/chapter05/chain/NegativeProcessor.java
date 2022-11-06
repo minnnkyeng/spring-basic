@@ -9,7 +9,7 @@ public class NegativeProcessor extends Processor {
     }
 
     @Override
-    public void process(java.lang.Number request) {
+    public void process(Number request) {
         if (request.getNumber() < 0) {
             log.info("\n 음수 name : {}",request.getNumber());
         } else {
