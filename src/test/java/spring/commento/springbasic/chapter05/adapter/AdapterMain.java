@@ -12,7 +12,7 @@ public class AdapterMain {
 
         SquarePeg smallSqPeg = new SquarePeg(2);
         SquarePeg largeSqPeg = new SquarePeg(20);
-//         hole.fits(smallSqPeg); // 원하는 기능이지만 컴파일 문제 발생
+//        hole.fits(smallSqPeg); // 원하는 기능이지만 컴파일 문제 발생
 
         // 어댑터 패턴으로 문제 해결
         RoundPeg smallSqPegAdapter = new SquarePegAdapter(smallSqPeg);

@@ -22,6 +22,8 @@ public class PrototypeMain {
         rectangle.height = 20;
         rectangle.color = "blue";
         shapes.add(rectangle);
+        Shape clone = rectangle.clone(); // == 다르지만 equals는 같은
+        shapes.add(clone);
         cloneAndCompare(shapes, new ArrayList<>());
     }
 
@@ -30,9 +32,11 @@ public class PrototypeMain {
 
         shapes.stream().map(Shape::clone).forEach(shapesCopy::add);
         for (int i = shapes.size() - 1; i >= 0; i--) {
-            log.info(shapes.get(i) != shapesCopy.get(i) ? shapes.get(i)
-                                                                .equals(shapesCopy.get(i)) ?
-                "\n 객체 내용은 같지만 다른객체입니다" : "\n 객체 주소도, 내용도 다릅니다" : "\n  완전히 동일한 object입니다.");
+            log.info(shapes.get(i) != shapesCopy.get(i)
+                         ? shapes.get(i).equals(shapesCopy.get(i)) ?
+                "\n 객체 내용은 같지만 다른객체입니다1"
+                : "\n 객체 주소도, 내용도 다릅니다2" :
+                         "\n  완전히 동일한 object입니다.3");
         }
     }
 }
