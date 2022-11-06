@@ -1,12 +1,16 @@
 package spring.commento.springbasic.chapter05;
 
 import lombok.AllArgsConstructor;
+import lombok.Getter;
 
-import java.util.Arrays;
-import java.util.HashMap;
+import java.util.Collections;
 import java.util.Map;
+import java.util.function.Function;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 @AllArgsConstructor
+@Getter
 public enum PlatformEnum {
 
     YOUTUBE("youtube"),
@@ -14,15 +18,12 @@ public enum PlatformEnum {
     NOTHING("fail");
 
     private final String platformName;
+    
+    private static final Map<String, PlatformEnum> platFormMap =
+        Collections.unmodifiableMap(
+            Stream.of(values()).collect(Collectors.toMap(PlatformEnum::getPlatformName, Function.identity())));
 
-
-    private static final Map<String, PlatformEnum> platFormMap = new HashMap<>();
-
-    static {
-        Arrays.stream(values()).forEachOrdered(platformEnum -> platFormMap.put(platformEnum.platformName,platformEnum));
-    }
-
-    public static PlatformEnum getPlatformByName(String platformName){
-        return platFormMap.getOrDefault(platformName,NOTHING);
+    public static PlatformEnum getPlatformByName(String platformName) {
+        return platFormMap.getOrDefault(platformName, NOTHING);
     }
 }
